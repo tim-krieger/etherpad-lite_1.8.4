@@ -5,7 +5,7 @@ form {
 }
 
 body {
-  background: url(images/fond.jpg) center center no-repeat fixed #fff;
+  background: background: #00456f;
   font-family: Quicksand, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
@@ -31,8 +31,9 @@ input {
 #inner {
   background: transparent;
   padding-top: 0;
-  width: 350px;
-  max-width: 350px;
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 50px;
   text-align: center;
   color:#FFF;
 }
@@ -51,8 +52,8 @@ input {
   text-shadow: none;
   font-size: 23px;
   line-height: 1.8;
-  color: #64d29b;
-  background: #586a69;
+  color: #fff;
+  background: #00a3d3;
   border-radius: 3px;
   box-shadow: none;
   height: 53px;
@@ -64,9 +65,9 @@ input {
 button[type=submit] {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  left: 305px;
-  color: #64d29b;
-  background: #586a69;
+  left: 355px;
+  color: #fff;
+  background: #00a3d3;
   border: none;
   top: 0;
   opacity: 1;
@@ -76,13 +77,19 @@ button[type=submit] {
 #button:hover,
 button[type=submit]:hover {
   cursor: pointer;
-  background: #4a5d5c;
-  color: #64d29b;
+  background: #0082a8;
+  color: #fff;
 }
 
 #padname {
   height: 38px;
-  max-width: 350px;
+  max-width: 100%;
   padding: 0 12px;
   position: relative;
+}
+
+svg#kits_logo {
+    width: 175px;
+    height: auto;
+    margin-bottom: 50px;
 }
