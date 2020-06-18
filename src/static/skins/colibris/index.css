@@ -19,9 +19,15 @@ body {
 #wrapper {
   border-top: none;
   margin-top: 0;
-  padding: 10px;
+  padding: 0px;
   background: 0 0;
   box-shadow: none
+}
+
+@media only screen and (min-width: 375px) {
+  #wrapper {
+    padding: 10px;
+  }
 }
 
 input {
@@ -33,9 +39,16 @@ input {
   padding-top: 0;
   width: 100%;
   max-width: 400px;
+  min-width: 320px;
   margin-bottom: 50px;
   text-align: center;
   color:#FFF;
+}
+
+@media only screen and (min-width: 420px) {
+  #inner {
+    min-width: 400px;
+  }
 }
 
 #label {
