@@ -105,3 +105,24 @@ svg#kits_logo {
     height: auto;
     margin-bottom: 50px;
 }
+
+.kits_footer_menu {
+    padding: 0px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.kits_footer_menu li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.kits_footer_menu a {
+    color: #fff;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+.kits_footer_menu a:hover {
+    text-decoration: underline;
+}
