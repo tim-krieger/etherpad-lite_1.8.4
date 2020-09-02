@@ -5,7 +5,7 @@ form {
 }
 
 body {
-  background: background: #00456f;
+  background: #ffffff;
   font-family: Quicksand, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
@@ -53,7 +53,7 @@ input {
 
 #label {
   text-shadow: none;
-  color: #FFF;
+  color: #333;
   font-weight: normal;
   text-align: center;
 }
@@ -101,28 +101,7 @@ button[type=submit]:hover {
 }
 
 svg#kits_logo {
-    width: 175px;
+    width: 250px;
     height: auto;
     margin-bottom: 50px;
-}
-
-.kits_footer_menu {
-    padding: 0px;
-    text-align: center;
-    margin-top: 100px;
-}
-
-.kits_footer_menu li {
-    display: inline-block;
-    padding: 5px;
-}
-
-.kits_footer_menu a {
-    color: #fff;
-    font-size: .8rem;
-    text-decoration: none;
-}
-
-.kits_footer_menu a:hover {
-    text-decoration: underline;
 }
