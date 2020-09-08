@@ -19,15 +19,9 @@ body {
 #wrapper {
   border-top: none;
   margin-top: 0;
-  padding: 0px;
+  padding: 10px;
   background: 0 0;
   box-shadow: none
-}
-
-@media only screen and (min-width: 375px) {
-  #wrapper {
-    padding: 10px;
-  }
 }
 
 input {
@@ -39,16 +33,9 @@ input {
   padding-top: 0;
   width: 100%;
   max-width: 400px;
-  min-width: 320px;
   margin-bottom: 50px;
   text-align: center;
   color:#FFF;
-}
-
-@media only screen and (min-width: 420px) {
-  #inner {
-    min-width: 400px;
-  }
 }
 
 #label {
@@ -104,4 +91,11 @@ svg#kits_logo {
     width: 250px;
     height: auto;
     margin-bottom: 50px;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 420px) {
+  svg#kits_logo {
+      margin-top: 30px;
+  }
 }
