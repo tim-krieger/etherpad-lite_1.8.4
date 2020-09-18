@@ -29,7 +29,6 @@ var socket;
 require('./jquery');
 require('./farbtastic');
 require('./excanvas');
-JSON = require('./json2');
 
 var chat = require('./chat').chat;
 var getCollabClient = require('./collab_client').getCollabClient;
@@ -278,9 +277,6 @@ function handshake()
     //if we haven't recieved the clientVars yet, then this message should it be
     else if (!receivedClientVars && obj.type == "CLIENT_VARS")
     {
-      //log the message
-      if (window.console) console.log(obj);
-
       receivedClientVars = true;
 
       //set some client vars
@@ -353,8 +349,6 @@ function handshake()
       //this message advices the client to disconnect
       if (obj.disconnect)
       {
-        console.warn("FORCED TO DISCONNECT");
-        console.warn(obj);
         padconnectionstatus.disconnected(obj.disconnect);
         socket.disconnect();
 
@@ -437,16 +431,27 @@ var pad = {
   },
   switchToPad: function(padId)
   {
+    var newHref = new RegExp(/.*\/p\/[^\/]+/).exec(document.location.pathname) || clientVars.padId;
+    newHref = newHref[0];
+
+    var options = clientVars.padOptions;
+    if (typeof options != "undefined" && options != null)
+    {
+        var option_str = [];
+        $.each(options, function(k,v) {
+          var str = k + "=" + v;
+          option_str.push(str);
+        });
+        var option_str = option_str.join("&");
+
+      newHref = newHref + '?' + option_str;
+    }
+
     // destroy old pad from DOM
     // See https://github.com/ether/etherpad-lite/pull/3915
     // TODO: Check if Destroying is enough and doesn't leave negative stuff
     // See ace.js "editor.destroy" for a reference of how it was done before
     $('#editorcontainer').find("iframe")[0].remove();
-    var options = document.location.href.split('?')[1];
-    var newHref = padId;
-    if (typeof options != "undefined" && options != null){
-      newHref = newHref + '?' + options;
-    }
 
     if(window.history && window.history.pushState)
     {
@@ -480,11 +485,6 @@ var pad = {
       // This will check if the prefs-cookie is set.
       // Otherwise it shows up a message to the user.
       padcookie.init();
-      if (!padcookie.isCookiesEnabled())
-      {
-        $('#loading').hide();
-        $('#noCookie').show();
-      }
     });
   },
   _afterHandshake: function()
